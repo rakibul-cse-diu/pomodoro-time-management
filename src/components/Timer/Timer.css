@@ -5,3 +5,9 @@
     justify-content: center;
     align-items: center;
 }
+
+.progress-bar {
+    width: 300px;
+    box-shadow: 0px 2px 5px 4px #b1b0b0;
+    border-radius: 50%;
+}
