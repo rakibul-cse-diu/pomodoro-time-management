@@ -41,3 +41,16 @@
 .stop-btn:hover {
   color: #e13636;
 }
+
+@media screen and (max-width: 668px) {
+  .container {
+    padding: 40px 0;
+  }
+
+  .main-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-content: center;
+  }
+}

@@ -36,7 +36,6 @@ function App() {
 
     secondsLeftRef.current = workTime * 60;
     setSecondsLeft(secondsLeftRef.current);
-    console.log(isStartRef.current);
 
     const interval = setInterval(() => {
       if (isStartRef.current) {

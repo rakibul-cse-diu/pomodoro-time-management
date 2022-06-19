@@ -4,7 +4,6 @@ import 'react-circular-progressbar/dist/styles.css';
 import './Timer.css';
 
 const Timer = ({ progressTime, time, seconds, mode }) => {
-    console.log(mode)
 
     return (
         <div className='timer-container'>
