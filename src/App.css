@@ -1,7 +1,11 @@
-.main-container {
+.container {
   background-color: #30384b;
   min-height: 100vh;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+}
+
+.main-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-content: center;
 }

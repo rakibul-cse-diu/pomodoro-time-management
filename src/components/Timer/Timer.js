@@ -14,7 +14,7 @@ const Timer = () => {
                     styles={buildStyles({
                         textSize: '16px',
                         textColor: '#fff',
-                        pathColor: "red",
+                        pathColor: " #f54e4e",
                         // tailColor: "green",
                     })} />
             </div>
