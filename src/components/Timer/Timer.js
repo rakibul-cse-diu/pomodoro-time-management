@@ -3,14 +3,15 @@ import { buildStyles, CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import './Timer.css';
 
-const Timer = () => {
+const Timer = ({ progressTime, time, seconds }) => {
+
     return (
         <div className='timer-container'>
             <div className='progress-bar'>
                 <CircularProgressbar
                     className=''
-                    value={40}
-                    text={"60:00"}
+                    value={progressTime}
+                    text={time + " : " + seconds}
                     styles={buildStyles({
                         textSize: '16px',
                         textColor: '#fff',
