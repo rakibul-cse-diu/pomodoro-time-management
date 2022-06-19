@@ -3,9 +3,41 @@
   min-height: 100vh;
 }
 
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .main-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-content: center;
   align-content: center;
+}
+
+.start-btn,
+.stop-btn {
+  background-color: #30384b;
+  color: white;
+  font-size: 36px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.start-btn {
+  color: #4aec8c;
+}
+
+.start-btn:hover {
+  color: #27c165;
+}
+
+.stop-btn {
+  color: #f54e4e;
+}
+
+.stop-btn:hover {
+  color: #e13636;
 }
