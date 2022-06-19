@@ -47,10 +47,10 @@ function App() {
       }
 
       passingTime();
-    }, 100);
+    }, 1000);
 
     return () => clearInterval(interval);
-  }, [workTime, breakTime]);
+  }, [workTime, breakTime, isStart]);
 
   const totalSeconds = mode === 'work'
     ? workTime * 60
@@ -76,11 +76,12 @@ function App() {
         setWorkTime,
         breakTime,
         setBreakTime,
+        mode
       }
     }>
       <div className='container'>
         <div className='main-container'>
-          <Timer progressTime={progressTime} time={time} seconds={seconds} />
+          <Timer progressTime={progressTime} time={time} seconds={seconds} mode={mode} />
           <Configuration />
         </div>
         <div className='button-container' onClick={setChanges}>

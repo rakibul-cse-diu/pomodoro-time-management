@@ -14,18 +14,20 @@ const Configuration = () => {
                     className='slider'
                     thumbClassName='thumb'
                     trackClassName='track'
-                    value={25}
+                    value={configData.workTime}
                     min={1}
                     max={120}
+                    onChange={newValue => configData.setWorkTime(newValue)}
                 />
                 <h4>BREAK - <span className='break-time'>{configData.breakTime}:00 min</span></h4>
                 <ReactSlider
                     className='slider green'
                     thumbClassName='thumb'
                     trackClassName='track'
-                    value={5}
+                    value={configData.breakTime}
                     min={1}
                     max={120}
+                    onChange={newValue => configData.setBreakTime(newValue)}
                 />
             </div>
         </div>
