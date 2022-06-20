@@ -9,21 +9,31 @@ function App() {
   const [isStart, setIsStart] = useState(false);
   const [workTime, setWorkTime] = useState(25);
   const [breakTime, setBreakTime] = useState(5);
+  const [cycle, setCycle] = useState(3);
+  const [count, setCount] = useState(0);
   const [mode, setMode] = useState('work');
   const [secondsLeft, setSecondsLeft] = useState(0);
 
   const secondsLeftRef = useRef(secondsLeft);
   const isStartRef = useRef(isStart);
   const modeRef = useRef(mode);
+  const countRef = useRef(count);
 
-  function passingTime() {
+  const passingTime = () => {
     secondsLeftRef.current--;
     setSecondsLeft(secondsLeftRef.current);
   }
 
   useEffect(() => {
 
-    function switchMode() {
+    const changeCycle = (count) => {
+      if (count === cycle * 2 - 2) {
+        const newCycle = cycle - 1;
+        setCycle(newCycle);
+      }
+    }
+
+    const switchMode = () => {
       const nextMode = modeRef.current === 'work' ? 'break' : 'work';
       const nextSeconds = (nextMode === 'work' ? workTime : breakTime) * 60;
 
@@ -36,20 +46,27 @@ function App() {
 
     secondsLeftRef.current = workTime * 60;
     setSecondsLeft(secondsLeftRef.current);
+    countRef.current = cycle * 2;
+    setCount(countRef.current);
+
 
     const interval = setInterval(() => {
       if (isStartRef.current) {
         return;
       }
-      if (secondsLeftRef.current === 0) {
-        return switchMode();
+      if (countRef.current === 0) {
+        return;
       }
-
+      if (secondsLeftRef.current === 0) {
+        switchMode();
+        countRef.current--;
+        changeCycle(countRef.current);
+      }
       passingTime();
-    }, 1000);
+    }, 10);
 
     return () => clearInterval(interval);
-  }, [workTime, breakTime, isStart]);
+  }, [workTime, breakTime, isStart, cycle]);
 
   const totalSeconds = mode === 'work'
     ? workTime * 60
@@ -75,7 +92,9 @@ function App() {
         setWorkTime,
         breakTime,
         setBreakTime,
-        mode
+        mode,
+        cycle,
+        setCycle
       }
     }>
       <div className='container'>

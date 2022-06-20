@@ -16,6 +16,10 @@
     color: #4aec8c;
 }
 
+.cycle-left {
+    color: orange;
+}
+
 .slider {
     height: 40px;
     width: 300px;
@@ -39,4 +43,12 @@
 
 .slider.green .thumb {
     background-color: #4aec8c;
+}
+
+.slider.green.cycle {
+    border: 2px solid orange;
+}
+
+.slider.green.cycle .thumb {
+    background-color: orange;
 }

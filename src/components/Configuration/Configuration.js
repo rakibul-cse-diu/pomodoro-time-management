@@ -29,6 +29,16 @@ const Configuration = () => {
                     max={120}
                     onChange={newValue => configData.setBreakTime(newValue)}
                 />
+                <h4>Cycle Left - <span className='cycle-left'>{configData.cycle}</span></h4>
+                <ReactSlider
+                    className='slider green cycle'
+                    thumbClassName='thumb'
+                    trackClassName='track'
+                    value={configData.cycle}
+                    min={1}
+                    max={120}
+                    onChange={newValue => configData.setCycle(newValue)}
+                />
             </div>
         </div>
     );
