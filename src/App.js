@@ -63,7 +63,7 @@ function App() {
         changeCycle(countRef.current);
       }
       passingTime();
-    }, 10);
+    }, 1000);
 
     return () => clearInterval(interval);
   }, [workTime, breakTime, isStart, cycle]);
